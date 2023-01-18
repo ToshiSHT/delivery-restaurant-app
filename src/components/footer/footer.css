@@ -1,0 +1,20 @@
+.footer{
+        height: 150px;
+        background-color: rgb(240, 232, 232);
+        margin-top:100px;
+}
+
+.footer .wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+}
+
+.footer .descr {
+    padding-top: 20px;
+    width: 300px;
+}
+.footer .timetable {
+    display: flex;
+    flex-direction: column;
+}
