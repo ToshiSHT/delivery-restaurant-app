@@ -6,7 +6,7 @@ const ProductSlice = createSlice({
     name: 'shopBasket',
     initialState: {
         isOpen:false,
-        addProductList : []
+        addProductList : [],
     },
     reducers:{
         openBasket: (state) => {state.isOpen = true},

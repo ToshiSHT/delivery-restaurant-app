@@ -1,10 +1,32 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } from "@mui/material";
-import { AddShoppingCart } from "@mui/icons-material";
+import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography,IconButton } from "@mui/material";
+import { AddShoppingCart , ArrowBackIos, ArrowForwardIos} from "@mui/icons-material";
 import { addProduct } from "../shopBasket/shopBasketSlise"; 
 import { useDispatch, useSelector } from "react-redux";
+import { useState , useEffect} from "react";
+import './productitem.css';
 
 
 const ProductItem = ({arrProducts}) => {
+    const [count, setCount] = useState({});
+    
+    useEffect(()=> {
+        const obj = {};
+        arrProducts.forEach(elem => { obj[elem.id] = 1});
+        setCount(obj);
+    },[])
+           
+
+   
+    const incrementCount = (id) => {
+        if (count[id] < 9) {
+            setCount({...count, [id] : count[id] + 1});
+        }
+    }
+    const decrementCount = (id) => {
+        if (count[id] > 1) {
+            setCount({...count, [id] : count[id] - 1});
+        }
+    }
 
     const dispatch = useDispatch();
     
@@ -16,6 +38,7 @@ const ProductItem = ({arrProducts}) => {
         
     }
     const productsCart = arrProducts.map(product => {
+      
         return (
             <Grid item xs={4} key={product.id}>
                     <Card sx={{ height: '100%' }}>
@@ -36,6 +59,26 @@ const ProductItem = ({arrProducts}) => {
                         </Typography>
                         </CardContent>
                         <CardActions sx={{justifyContent: 'flex-end'}}>
+                         <IconButton
+                            size="large"
+                            edge="start"
+                            color="primary"
+                            aria-label="prev_count"
+                            sx={{padding:'2px'}}
+                            onClick={() => decrementCount(product.id)}>
+                            <ArrowBackIos/>
+                        </IconButton>
+                         <span>{count[product.id]}</span>
+                         <IconButton
+                            size="large"
+                            edge="start"
+                            color="primary"
+                            aria-label="forvard_count"
+                            sx={{padding:'2px'}}
+                            onClick={() => incrementCount(product.id)}>
+                            <ArrowForwardIos/>
+                        </IconButton>
+                        
                         <Button variant="outlined" size="small" endIcon={<AddShoppingCart />}
                          onClick={() => addProductToBasket(product.id)}
                         >
