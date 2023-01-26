@@ -38,15 +38,12 @@ const Sidemenu = () => {
                 </IconButton>
                 </Box>
                 <Box sx={{width :'300px', display :'flex', justifyContent: 'center'}} >
-                   
                         <List >
                            {menuItems}
                         </List>
-                  
                 </Box>
             </nav>
         </Drawer>
-
     )
 }
 

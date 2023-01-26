@@ -49,51 +49,32 @@ const ProductItem = ({arrProducts}) => {
       
         return (
             <Grid item xs={4} key={product.id}>
-                    <Card sx={{ height: '100%' }}>
-                        <CardMedia
-                        sx={{ height: 170 }}
-                        image={product.img}
-                        title="goods_cart"
-                        />
-                        <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                            {product.title}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                            {product.description}
-                        </Typography>
-                        <Typography variant="h6" color="text.secondary" mt={'20px'}>
-                            Цена: {product.price}руб.
-                        </Typography>
-                        </CardContent>
-                        <CardActions sx={{justifyContent: 'flex-end'}}>
-                         <IconButton
-                            size="large"
-                            edge="start"
-                            color="primary"
-                            aria-label="prev_count"
-                            sx={{padding:'2px'}}
-                            onClick={() => decrementCount(product.id)}>
-                            <ArrowBackIos/>
-                        </IconButton>
-                         <span>{count[product.id]}</span>
-                         <IconButton
-                            size="large"
-                            edge="start"
-                            color="primary"
-                            aria-label="forvard_count"
-                            sx={{padding:'2px'}}
-                            onClick={() => incrementCount(product.id)}>
-                            <ArrowForwardIos/>
-                        </IconButton>
-                        
-                        <Button variant="outlined" size="small" endIcon={<AddShoppingCart />}
-                         onClick={() => addProductToBasket(product.id)}
-                        >
-                         В корзину
-                        </Button>
-                        </CardActions>
-                        </Card>
+            <Card sx={{ height: '100%' }}>
+              <CardMedia sx={{ height: 170 }} image={product.img} title="goods_cart" />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  {product.title}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {product.description}
+                </Typography>
+                <Typography variant="h6" color="text.secondary" mt={ '20px'}>
+                  Цена: {product.price}руб.
+                </Typography>
+              </CardContent>
+              <CardActions sx={{justifyContent: 'flex-end'}}>
+                <IconButton size="large" edge="start" color="primary" aria-label="prev_count" sx={{padding: '2px'}} onClick={()=> decrementCount(product.id)}>
+                  <ArrowBackIos/>
+                </IconButton>
+                <span>{count[product.id]}</span>
+                <IconButton size="large" edge="start" color="primary" aria-label="forvard_count" sx={{padding: '2px'}} onClick={()=> incrementCount(product.id)}>
+                  <ArrowForwardIos/>
+                </IconButton>
+          
+                <Button variant="outlined" size="small" endIcon={<AddShoppingCart />} onClick={() => addProductToBasket(product.id)} > В корзину
+                </Button>
+              </CardActions>
+            </Card>
           </Grid>
         )
     })

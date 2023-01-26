@@ -23,11 +23,8 @@ const ProductSlice = createSlice({
                return item
             })
         }
-    },
-    
-
     }
-)
+})
 
 const {reducer,actions} = ProductSlice;
 export const {openBasket,closeBasket,addProductInBasket,removeProduct, updateProductBasket} = actions;
