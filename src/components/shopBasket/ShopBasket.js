@@ -1,5 +1,5 @@
 
-import { Drawer, ListItem, IconButton,List, Typography, Divider } from "@mui/material";
+import { Drawer, ListItem, IconButton,List, Typography, Divider, Box } from "@mui/material";
 import {  DeleteForever } from "@mui/icons-material";
 import { useSelector, useDispatch } from "react-redux";
 import { closeBasket, removeProduct} from "./shopBasketSlise";
@@ -8,12 +8,12 @@ const ShopBasket = () => {
     const dispatch = useDispatch();
     const basketIsOpen = useSelector(state => state.shopBasket.isOpen);
     const arrBasketProduct = useSelector(state => state.shopBasket.addProductList)
-    console.log(basketIsOpen);
+   
     const onBasketClose = () => {
         dispatch(closeBasket())
     }
-    const allPrice = arrBasketProduct.reduce((acc, item) => acc + +item.price, 0);
-    console.log(allPrice);
+    const allPrice = arrBasketProduct.reduce((acc, item) => acc + +item.price*item.countProd, 0);
+   
 
     const onDeleteProduct = (id) => {
         dispatch(removeProduct(id));
@@ -21,39 +21,40 @@ const ShopBasket = () => {
 
     const productItems = arrBasketProduct.map(item => {
         return (
-
-        <>      
+     
              <ListItem key={item.id}>
-                <Typography  component="div" sx={{   
+                <Box   sx={{   
                 fontSize : '16px',
                 fontFamily: 'Rowdies, cursive',
                 textAlign: 'left',
                 mt: '10px',
                 justifyContent: 'space-around' }}>
                 {item.title}
-                    <Typography component="div" sx={{display: 'flex',
+                <Box component="div" sx={{display: 'flex',
                      justifyContent: 'space-between',
                       width: '400px',
                       alignItems: 'center'}}>
                     <Typography component="div">Цена : {item.price}</Typography>
-                    <Typography component="div">Колличество: {item.count}</Typography>
-                    <Typography component="div"> <IconButton
-                    size="small"
-                    edge="start"
-                    color="warning"
-                    aria-label="delete"
-                    sx={{ ml: '20px', mb:'2px' }}
-                    onClick={() => onDeleteProduct(item.id)}
-                    >
-                    < DeleteForever/>
-                    </IconButton></Typography>
+                    <Typography component="div">Колличество: {item.countProd}</Typography>
+                    <Typography component="div"> 
+                        <IconButton
+                        size="small"
+                        edge="start"
+                        color="warning"
+                        aria-label="delete"
+                        sx={{ ml: '20px', mb:'2px' }}
+                        onClick={() => onDeleteProduct(item.id)}>
+                            < DeleteForever/>
+                        </IconButton>
+                    </Typography>
                    
-                </Typography>
-               
-                </Typography>
+                </Box>
+                <Divider/>
+                </Box>
+                
             </ListItem>
-            <Divider/>
-        </>
+            
+  
         )  
     })
 
@@ -71,7 +72,7 @@ const ShopBasket = () => {
                    </Typography>
                 </ListItem>
                 <Divider/>
-                   <Typography sx={{
+                   <Typography component="div" sx={{
                     fontSize : '20px',
                     fontFamily: 'Rowdies, cursive',
                     textAlign: 'center',

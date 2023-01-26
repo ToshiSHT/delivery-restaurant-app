@@ -1,4 +1,4 @@
-{"products":[
+{"rolls":[
   {
       "id": "1",
       "title": "Ролл Филадельфия",
@@ -55,4 +55,72 @@
       "img" : "https://kartinkin.net/uploads/posts/2021-07/thumbs/1625214488_1-kartinkin-com-p-filadelfiya-rolli-yeda-krasivo-foto-1.jpg",
       "img_prev" : "https://kartinkin.net/uploads/posts/2021-07/thumbs/1625214488_1-kartinkin-com-p-filadelfiya-rolli-yeda-krasivo-foto-1.jpg"
   }
+],
+"pizza" :[
+    {
+        "id": "8",
+        "title": "Пицца Ассорти",
+        "description" : "Лосось, сливочный сыр, огурец, соевый соус (30 мл).",
+        "price" : "505",
+        "img" : "https://cdn.citypizza.ru/upload/img/ec/1664870433265.png",
+        "img_prev" : "https://cdn.citypizza.ru/upload/img/ec/1664870433265.png"
+    },
+    {
+        "id": "9",
+        "title": "Пицца Калифорния",
+        "description" : "Лосось, сливочный сыр, огурец, соевый соус (30 мл).",
+        "price" : "450",
+        "img" : "https://cdn.citypizza.ru/upload/img/ec/1664870433265.png",
+        "img_prev" : "https://cdn.citypizza.ru/upload/img/ec/1664870433265.png"
+    },
+    {
+        "id": "10",
+        "title": "Пицца Мартышка",
+        "description" : "Лосось, сливочный сыр, огурец, соевый соус (30 мл).",
+        "price" : "385",
+        "img" : "https://cdn.citypizza.ru/upload/img/ec/1664870433265.png",
+        "img_prev" : "https://cdn.citypizza.ru/upload/img/ec/1664870433265.png"
+    },
+    {
+        "id": "11",
+        "title": "Пицца Тантум-Верде",
+        "description" : "Лосось, сливочный сыр, огурец, соевый соус (30 мл).",
+        "price" : "540",
+        "img" : "https://cdn.citypizza.ru/upload/img/ec/1664870433265.png",
+        "img_prev" : "https://cdn.citypizza.ru/upload/img/ec/1664870433265.png"
+    }
+],
+"susi":[
+    {
+        "id": "12",
+        "title": "Суши венеция",
+        "description" : "Лосось, сливочный сыр, огурец, соевый соус (30 мл).",
+        "price" : "505",
+        "img" : "https://sushiluks.ru/thumb/2/mj8az0yLnQNWnMLCZJf8mQ/400r400/d/sushi_kopchenyy_losos.png",
+        "img_prev" : "https://sushiluks.ru/thumb/2/mj8az0yLnQNWnMLCZJf8mQ/400r400/d/sushi_kopchenyy_losos.png"
+    },
+    {
+        "id": "13",
+        "title": "Суши Кальмарчик",
+        "description" : "Лосось, сливочный сыр, огурец, соевый соус (30 мл).",
+        "price" : "450",
+        "img" : "https://sushiluks.ru/thumb/2/mj8az0yLnQNWnMLCZJf8mQ/400r400/d/sushi_kopchenyy_losos.png",
+        "img_prev" : "https://sushiluks.ru/thumb/2/mj8az0yLnQNWnMLCZJf8mQ/400r400/d/sushi_kopchenyy_losos.png"
+    },
+    {
+        "id": "14",
+        "title": "Суши Лососик",
+        "description" : "Лосось, сливочный сыр, огурец, соевый соус (30 мл).",
+        "price" : "385",
+        "img" : "https://sushiluks.ru/thumb/2/mj8az0yLnQNWnMLCZJf8mQ/400r400/d/sushi_kopchenyy_losos.png",
+        "img_prev" : "https://sushiluks.ru/thumb/2/mj8az0yLnQNWnMLCZJf8mQ/400r400/d/sushi_kopchenyy_losos.png"
+    },
+    {
+        "id": "15",
+        "title": "Суши осьминожек",
+        "description" : "Лосось, сливочный сыр, огурец, соевый соус (30 мл).",
+        "price" : "540",
+        "img" : "https://sushiluks.ru/thumb/2/mj8az0yLnQNWnMLCZJf8mQ/400r400/d/sushi_kopchenyy_losos.png",
+        "img_prev" : "https://sushiluks.ru/thumb/2/mj8az0yLnQNWnMLCZJf8mQ/400r400/d/sushi_kopchenyy_losos.png"
+    }
 ]}

@@ -10,7 +10,8 @@ body {
  font-family: 'Rowdies', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background:  no-repeat center / cover  url('./img/japanese-traditional.webp') 
+  background: rgb(230, 230, 230);
+  
   
 }
 

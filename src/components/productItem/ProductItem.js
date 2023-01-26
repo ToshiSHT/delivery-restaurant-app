@@ -1,6 +1,6 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography,IconButton } from "@mui/material";
 import { AddShoppingCart , ArrowBackIos, ArrowForwardIos} from "@mui/icons-material";
-import { addProduct } from "../shopBasket/shopBasketSlise"; 
+import { addProductInBasket, updateProductBasket } from "../shopBasket/shopBasketSlise"; 
 import { useDispatch, useSelector } from "react-redux";
 import { useState , useEffect} from "react";
 import './productitem.css';
@@ -8,7 +8,8 @@ import './productitem.css';
 
 const ProductItem = ({arrProducts}) => {
     const [count, setCount] = useState({});
-    
+    const basketList = useSelector(state => state.shopBasket.addProductList);
+    console.log(basketList);
     useEffect(()=> {
         const obj = {};
         arrProducts.forEach(elem => { obj[elem.id] = 1});
@@ -31,10 +32,17 @@ const ProductItem = ({arrProducts}) => {
     const dispatch = useDispatch();
     
     const  addProductToBasket = (id) => {
-        const addingProd = arrProducts.filter(item => item.id === id);
+      
+        if (basketList.some(item => item.id === id)){
+          
+            dispatch(updateProductBasket({id : id , count : count[id]}))
+          
+        } else {
+            const addingProd = arrProducts.filter(item => item.id === id);
+             dispatch(addProductInBasket({...addingProd[0], countProd : count[id]}))
+        }
         
-        dispatch(addProduct({...addingProd[0], count : 1}))
-        
+        setCount({...count, [id] : 1})
         
     }
     const productsCart = arrProducts.map(product => {
@@ -45,7 +53,7 @@ const ProductItem = ({arrProducts}) => {
                         <CardMedia
                         sx={{ height: 170 }}
                         image={product.img}
-                        title="green iguana"
+                        title="goods_cart"
                         />
                         <CardContent>
                         <Typography gutterBottom variant="h5" component="div">
